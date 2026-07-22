@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Google Ads</title>
+  <path d="M34 102 70 27" fill="none" stroke="#fbbc04" stroke-linecap="round" stroke-width="27"/>
+  <path d="m70 27 38 75" fill="none" stroke="#4285f4" stroke-linecap="round" stroke-width="27"/>
+  <circle cx="34" cy="102" r="14" fill="#34a853"/>
+</svg>

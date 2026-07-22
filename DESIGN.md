@@ -29,6 +29,7 @@ Dark, compact, restrained, and modeled on the RAX Daily Ads Dash. The page shoul
 - Compact masthead with logo and reporting window
 - Six executive metrics visible immediately
 - One dual-axis complete-week chart
+- Google Ads and Triple Whale source marks make the chart inputs explicit
 - Four directly playable featured videos for each reporting month
 - Collapsible creator rows with playable June videos
 - One short attribution footnote

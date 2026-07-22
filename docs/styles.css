@@ -163,25 +163,57 @@ h2 {
   font-size: 11px;
 }
 
-.legend {
-  display: flex;
-  gap: 24px;
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.legend span {
+.sources {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
 }
 
-.legend i {
+.source {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.source img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.source > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.source strong {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.source small {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.source i {
   display: inline-block;
-  width: 26px;
-  height: 6px;
+  width: 18px;
+  height: 4px;
   border-radius: 4px;
+}
+
+.versus {
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .spend-key {
@@ -517,9 +549,27 @@ footer {
     padding: 12px 14px;
   }
 
-  .legend,
   .platform-note {
     display: none;
+  }
+
+  .chart-panel .panel-heading {
+    flex-direction: column;
+  }
+
+  .sources {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .source img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .source small {
+    white-space: normal;
   }
 
   .chart-wrap {
