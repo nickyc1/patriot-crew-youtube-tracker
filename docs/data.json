@@ -1,150 +1,314 @@
 {
-  "generated_at": "2026-07-22T18:49:38.428001+00:00",
+  "generated_at": "2026-07-22T19:17:33.213588+00:00",
   "data_through": "2026-07-22",
-  "source_window": {
-    "survey_start": "2026-06-03",
-    "survey_end": "2026-07-22"
+  "reporting_window": {
+    "start": "2026-06-08",
+    "end": "2026-07-19",
+    "label": "Jun 8\u2013Jul 19"
   },
   "summary": {
-    "total_survey_responses": 5797,
-    "total_youtube_responses": 76,
+    "youtube_spend": 6440.06,
+    "youtube_responses": 60,
+    "youtube_revenue": 8219.43,
+    "youtube_aov": 136.99,
+    "all_survey_aov": 129.44,
+    "aov_difference": 7.55,
+    "survey_attributed_roas": 1.28,
+    "cost_per_youtube_response": 107.33,
+    "matched_youtube_orders": 60,
+    "youtube_match_rate": 1.0,
     "same_week_correlation": 0.21,
-    "complete_week_count": 6,
-    "peak_week": "Jun 29\u2013Jul 5",
-    "peak_week_youtube_responses": 14,
-    "peak_week_youtube_spend": 1518.62,
-    "latest_complete_week": "Jul 13\u2013Jul 19",
-    "latest_complete_youtube_responses": 8,
-    "latest_complete_youtube_spend": 254.24
-  },
-  "months": {
-    "2026-06": {
-      "survey_responses": 3636,
-      "youtube_responses": 49,
-      "youtube_share": 0.0135,
-      "youtube_spend": 4677.12,
-      "impressions": 2064017,
-      "clicks": 8666
-    },
-    "2026-07": {
-      "survey_responses": 2161,
-      "youtube_responses": 27,
-      "youtube_share": 0.0125,
-      "youtube_spend": 2256.92,
-      "impressions": 210069,
-      "clicks": 1252
-    }
+    "complete_week_count": 6
   },
   "weeks": [
-    {
-      "week_start": "2026-06-01",
-      "week_end": "2026-06-07",
-      "label": "Jun 1\u2013Jun 7",
-      "is_partial": true,
-      "survey_responses": 886,
-      "youtube_responses": 16,
-      "youtube_share": 0.0181,
-      "youtube_spend": 124.37,
-      "impressions": 13992,
-      "clicks": 41,
-      "cost_per_youtube_response": null
-    },
     {
       "week_start": "2026-06-08",
       "week_end": "2026-06-14",
       "label": "Jun 8\u2013Jun 14",
-      "is_partial": false,
       "survey_responses": 950,
       "youtube_responses": 6,
-      "youtube_share": 0.0063,
       "youtube_spend": 1432.61,
-      "impressions": 108171,
-      "clicks": 454,
-      "cost_per_youtube_response": 238.77
+      "youtube_revenue": 673.12,
+      "youtube_aov": 112.19,
+      "survey_roas": 0.47,
+      "cost_per_youtube_response": 238.77,
+      "matched_youtube_orders": 6
     },
     {
       "week_start": "2026-06-15",
       "week_end": "2026-06-21",
       "label": "Jun 15\u2013Jun 21",
-      "is_partial": false,
       "survey_responses": 954,
       "youtube_responses": 9,
-      "youtube_share": 0.0094,
       "youtube_spend": 1368.32,
-      "impressions": 753015,
-      "clicks": 2704,
-      "cost_per_youtube_response": 152.04
+      "youtube_revenue": 1050.8,
+      "youtube_aov": 116.76,
+      "survey_roas": 0.77,
+      "cost_per_youtube_response": 152.04,
+      "matched_youtube_orders": 9
     },
     {
       "week_start": "2026-06-22",
       "week_end": "2026-06-28",
       "label": "Jun 22\u2013Jun 28",
-      "is_partial": false,
       "survey_responses": 660,
       "youtube_responses": 12,
-      "youtube_share": 0.0182,
       "youtube_spend": 1393.33,
-      "impressions": 1162273,
-      "clicks": 5285,
-      "cost_per_youtube_response": 116.11
+      "youtube_revenue": 1639.79,
+      "youtube_aov": 136.65,
+      "survey_roas": 1.18,
+      "cost_per_youtube_response": 116.11,
+      "matched_youtube_orders": 12
     },
     {
       "week_start": "2026-06-29",
       "week_end": "2026-07-05",
       "label": "Jun 29\u2013Jul 5",
-      "is_partial": false,
       "survey_responses": 679,
       "youtube_responses": 14,
-      "youtube_share": 0.0206,
       "youtube_spend": 1518.62,
-      "impressions": 122384,
-      "clicks": 868,
-      "cost_per_youtube_response": 108.47
+      "youtube_revenue": 2225.75,
+      "youtube_aov": 158.98,
+      "survey_roas": 1.47,
+      "cost_per_youtube_response": 108.47,
+      "matched_youtube_orders": 14
     },
     {
       "week_start": "2026-07-06",
       "week_end": "2026-07-12",
       "label": "Jul 6\u2013Jul 12",
-      "is_partial": false,
       "survey_responses": 742,
       "youtube_responses": 11,
-      "youtube_share": 0.0148,
       "youtube_spend": 472.94,
-      "impressions": 65645,
-      "clicks": 371,
-      "cost_per_youtube_response": 42.99
+      "youtube_revenue": 1499.58,
+      "youtube_aov": 136.33,
+      "survey_roas": 3.17,
+      "cost_per_youtube_response": 42.99,
+      "matched_youtube_orders": 11
     },
     {
       "week_start": "2026-07-13",
       "week_end": "2026-07-19",
       "label": "Jul 13\u2013Jul 19",
-      "is_partial": false,
       "survey_responses": 713,
       "youtube_responses": 8,
-      "youtube_share": 0.0112,
       "youtube_spend": 254.24,
-      "impressions": 32411,
-      "clicks": 142,
-      "cost_per_youtube_response": 31.78
-    },
-    {
-      "week_start": "2026-07-20",
-      "week_end": "2026-07-26",
-      "label": "Jul 20\u2013Jul 26",
-      "is_partial": true,
-      "survey_responses": 213,
-      "youtube_responses": 0,
-      "youtube_share": 0.0,
-      "youtube_spend": 369.6,
-      "impressions": 16195,
-      "clicks": 53,
-      "cost_per_youtube_response": null
+      "youtube_revenue": 1130.39,
+      "youtube_aov": 141.3,
+      "survey_roas": 4.45,
+      "cost_per_youtube_response": 31.78,
+      "matched_youtube_orders": 8
     }
   ],
-  "methodology": {
-    "survey_definition": "Orders selecting YouTube for where they first heard about Patriot Crew.",
-    "spend_definition": "Google Ads cost delivered on YouTube inventory across all campaign types.",
-    "week_definition": "Monday through Sunday. Partial weeks are labeled.",
-    "interpretation": "Directional acquisition signal; correlation does not prove causation."
+  "june_creators": [
+    {
+      "creator": "Jarrod Wright",
+      "spend": 1282.07,
+      "google_reported_revenue": 4683.42,
+      "videos": [
+        {
+          "youtube_id": "CmSbXfkX_Mg",
+          "title": "Square - Crop/Trim of June 11, 2026",
+          "spend": 354.77,
+          "google_reported_revenue": 586.57
+        },
+        {
+          "youtube_id": "7vOzMSkxhXA",
+          "title": "Crop/Trim of Crop/Trim of June 11, 2026",
+          "spend": 245.32,
+          "google_reported_revenue": 1127.59
+        },
+        {
+          "youtube_id": "naIUNwXA8fg",
+          "title": "June 11, 2026",
+          "spend": 238.32,
+          "google_reported_revenue": 856.0
+        },
+        {
+          "youtube_id": "a11cTOfxsuk",
+          "title": "June 11, 2026",
+          "spend": 237.89,
+          "google_reported_revenue": 1073.54
+        },
+        {
+          "youtube_id": "-wDu5iCUrsU",
+          "title": "Crop/Trim of June 11, 2026",
+          "spend": 205.77,
+          "google_reported_revenue": 1039.72
+        }
+      ],
+      "video_count": 5,
+      "google_reported_roas": 3.65
+    },
+    {
+      "creator": "Taylor Arkland",
+      "spend": 549.44,
+      "google_reported_revenue": 142.78,
+      "videos": [
+        {
+          "youtube_id": "M5mBPsfehsA",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 175.39,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "PfUmXppd9bc",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 131.87,
+          "google_reported_revenue": 61.71
+        },
+        {
+          "youtube_id": "W1HuX4gf-zU",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 114.95,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "IwVf-WdNREs",
+          "title": "Check Out Patriot Crew at the link",
+          "spend": 78.52,
+          "google_reported_revenue": 14.31
+        },
+        {
+          "youtube_id": "CY72OCaWxUc",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 9.23,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "mBLsHNV-C9c",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 9.17,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "TIsLyacXorg",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 8.77,
+          "google_reported_revenue": 65.8
+        },
+        {
+          "youtube_id": "9j25CuPs8O4",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 8.1,
+          "google_reported_revenue": 0.97
+        },
+        {
+          "youtube_id": "b1RNblielWY",
+          "title": "Shortened: Check out Patriot Crew at the link",
+          "spend": 5.67,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "IKx3tqs8hnk",
+          "title": "Check out Patriot Crew at the link",
+          "spend": 4.15,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "eM45Ou5rytM",
+          "title": "Shortened: Check out Patriot Crew at the link",
+          "spend": 3.06,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "eo41pScBqfI",
+          "title": "Shortened: Check out Patriot Crew at the link",
+          "spend": 0.57,
+          "google_reported_revenue": 0.0
+        }
+      ],
+      "video_count": 12,
+      "google_reported_roas": 0.26
+    },
+    {
+      "creator": "Tyler Kuhn",
+      "spend": 433.32,
+      "google_reported_revenue": 92.94,
+      "videos": [
+        {
+          "youtube_id": "t-oUDFiJbFU",
+          "title": "Stop fighting it and get shirts that actually fit right!",
+          "spend": 137.7,
+          "google_reported_revenue": 92.94
+        },
+        {
+          "youtube_id": "UlfHFxa6w20",
+          "title": "The perfect Father\u2019s Day fit!",
+          "spend": 131.2,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "3sLeaNsTl54",
+          "title": "Don\u2019t miss America\u2019s 250th!!!",
+          "spend": 128.46,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "rWCP6il_EUY",
+          "title": "Shortened: The perfect Father\u2019s Day fit!",
+          "spend": 27.07,
+          "google_reported_revenue": 0.0
+        },
+        {
+          "youtube_id": "BgMDMkj858g",
+          "title": "Shortened: Stop fighting it and get shirts that actually fit right!",
+          "spend": 8.89,
+          "google_reported_revenue": 0.0
+        }
+      ],
+      "video_count": 5,
+      "google_reported_roas": 0.21
+    },
+    {
+      "creator": "Todd Spears",
+      "spend": 393.99,
+      "google_reported_revenue": 381.02,
+      "videos": [
+        {
+          "youtube_id": "2Da1sBq61MA",
+          "title": "Plain Tees The Best Wardrobe Decision",
+          "spend": 393.99,
+          "google_reported_revenue": 381.02
+        }
+      ],
+      "video_count": 1,
+      "google_reported_roas": 0.97
+    },
+    {
+      "creator": "Grant McMullen",
+      "spend": 312.52,
+      "google_reported_revenue": 0.0,
+      "videos": [
+        {
+          "youtube_id": "SI8fv7JX-lQ",
+          "title": "Check out patriot crew! One of the best shirts I\u2019ve ever bought!",
+          "spend": 312.52,
+          "google_reported_revenue": 0.0
+        }
+      ],
+      "video_count": 1,
+      "google_reported_roas": 0.0
+    },
+    {
+      "creator": "William White",
+      "spend": 185.36,
+      "google_reported_revenue": 264.65,
+      "videos": [
+        {
+          "youtube_id": "uqXpKewPht8",
+          "title": "Affordable Shirts That Actually Fit",
+          "spend": 185.36,
+          "google_reported_revenue": 264.65
+        }
+      ],
+      "video_count": 1,
+      "google_reported_roas": 1.43
+    }
+  ],
+  "definitions": {
+    "revenue": "Shopify net payments received minus refunds for matched survey orders.",
+    "survey_roas": "Matched YouTube survey-order revenue divided by Google Ads spend delivered on YouTube inventory.",
+    "caveat": "Survey-attributed first touch, not incremental or platform-attributed revenue."
   }
 }

@@ -33,7 +33,7 @@ jobs:
           set -euo pipefail
           python3 -m unittest discover -s tests -v
           python3 -m json.tool docs/data.json >/dev/null
-          if grep -RniE '(Email adress|Order number|Order id|@[^ ]+\.[A-Za-z]{2,})' docs; then
+          if grep -RniI -E '(Email adress|Order number|Order id|@[^ ]+\.[A-Za-z]{2,})' docs; then
             echo "Potential customer-level data found in public files"
             exit 1
           fi

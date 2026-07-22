@@ -30,13 +30,14 @@ class BuildDataTests(unittest.TestCase):
         self.assertEqual(sum(int(row["youtube"]) for row in rows), 1)
         self.assertNotIn("Email adress", rows[0])
         self.assertNotIn(ORDER_ID, rows[0])
+        self.assertEqual(rows[0]["order_id"], "123")
 
     def test_public_output_contains_aggregates_only(self):
         survey = [
-            {"date": date(2026, 6, 8), "youtube": True},
-            {"date": date(2026, 6, 9), "youtube": False},
-            {"date": date(2026, 6, 15), "youtube": True},
-            {"date": date(2026, 6, 22), "youtube": True},
+            {"order_id": "101", "date": date(2026, 6, 8), "youtube": True},
+            {"order_id": "102", "date": date(2026, 6, 9), "youtube": False},
+            {"order_id": "103", "date": date(2026, 6, 15), "youtube": True},
+            {"order_id": "104", "date": date(2026, 6, 22), "youtube": True},
         ]
         delivery = [
             {"date": date(2026, 6, 8), "spend": 100.0, "impressions": 1000, "clicks": 10},
@@ -46,6 +47,8 @@ class BuildDataTests(unittest.TestCase):
         output = build_public_data(
             survey,
             delivery,
+            {"101": 125.0, "102": 75.0, "103": 150.0, "104": 175.0},
+            [],
             generated_at=datetime(2026, 6, 22, tzinfo=timezone.utc),
         )
         rendered = str(output).casefold()
@@ -53,8 +56,28 @@ class BuildDataTests(unittest.TestCase):
         self.assertNotIn("email", rendered)
         self.assertNotIn("order id", rendered)
         self.assertNotIn("customer@example.com", rendered)
-        self.assertEqual(output["summary"]["total_youtube_responses"], 3)
+        self.assertEqual(output["summary"]["youtube_responses"], 2)
+        self.assertEqual(output["summary"]["youtube_revenue"], 275.0)
+        self.assertEqual(output["summary"]["youtube_aov"], 137.5)
         self.assertEqual(output["weeks"][0]["youtube_spend"], 100.0)
+
+    def test_partial_weeks_are_not_published(self):
+        survey = [
+            {"order_id": "101", "date": date(2026, 6, 3), "youtube": True},
+            {"order_id": "102", "date": date(2026, 6, 8), "youtube": True},
+            {"order_id": "103", "date": date(2026, 6, 15), "youtube": True},
+            {"order_id": "104", "date": date(2026, 6, 22), "youtube": True},
+        ]
+        delivery = [
+            {"date": date(2026, 6, 3), "spend": 50.0, "impressions": 1, "clicks": 1},
+            {"date": date(2026, 6, 8), "spend": 100.0, "impressions": 1, "clicks": 1},
+            {"date": date(2026, 6, 15), "spend": 100.0, "impressions": 1, "clicks": 1},
+        ]
+        output = build_public_data(survey, delivery)
+
+        self.assertEqual(output["weeks"][0]["week_start"], "2026-06-08")
+        self.assertEqual(output["weeks"][-1]["week_end"], "2026-06-21")
+        self.assertTrue(all("is_partial" not in week for week in output["weeks"]))
 
 
 if __name__ == "__main__":
