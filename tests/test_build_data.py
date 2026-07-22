@@ -49,6 +49,7 @@ class BuildDataTests(unittest.TestCase):
             delivery,
             {"101": 125.0, "102": 75.0, "103": 150.0, "104": 175.0},
             [],
+            [],
             generated_at=datetime(2026, 6, 22, tzinfo=timezone.utc),
         )
         rendered = str(output).casefold()

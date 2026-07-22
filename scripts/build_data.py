@@ -208,6 +208,59 @@ def fetch_june_creator_assets(service, customer_id: str) -> list[dict[str, objec
     return sorted(result, key=lambda creator: creator["spend"], reverse=True)
 
 
+def fetch_featured_videos_by_month(
+    service, customer_id: str, start: date, end: date, limit: int = 4
+) -> list[dict[str, object]]:
+    query = f"""
+        SELECT
+          segments.month,
+          asset.youtube_video_asset.youtube_video_id,
+          asset.youtube_video_asset.youtube_video_title,
+          metrics.cost_micros
+        FROM ad_group_ad_asset_view
+        WHERE segments.date BETWEEN '{start.isoformat()}' AND '{end.isoformat()}'
+          AND campaign.advertising_channel_type = 'DEMAND_GEN'
+          AND asset.type = 'YOUTUBE_VIDEO'
+          AND metrics.cost_micros > 0
+    """
+    grouped: dict[tuple[str, str], dict[str, object]] = {}
+    for row in service.search(customer_id=customer_id, query=query):
+        youtube_id = row.asset.youtube_video_asset.youtube_video_id
+        if not YOUTUBE_ID_PATTERN.fullmatch(youtube_id):
+            continue
+        month = row.segments.month[:7]
+        if not re.fullmatch(r"[0-9]{4}-[0-9]{2}", month):
+            continue
+        key = (month, youtube_id)
+        video = grouped.setdefault(
+            key,
+            {
+                "youtube_id": youtube_id,
+                "title": row.asset.youtube_video_asset.youtube_video_title[:120],
+                "spend": 0.0,
+            },
+        )
+        video["spend"] += row.metrics.cost_micros / 1_000_000
+
+    by_month: dict[str, list[dict[str, object]]] = defaultdict(list)
+    for (month, _), video in grouped.items():
+        video["spend"] = round(video["spend"], 2)
+        by_month[month].append(video)
+
+    result = []
+    for month, videos in sorted(by_month.items()):
+        videos.sort(key=lambda video: video["spend"], reverse=True)
+        month_date = date.fromisoformat(f"{month}-01")
+        result.append(
+            {
+                "month": month,
+                "label": month_date.strftime("%B %Y"),
+                "videos": videos[:limit],
+            }
+        )
+    return result
+
+
 def get_shopify_token() -> str:
     token = subprocess.check_output(
         ["op", "read", SHOPIFY_TOKEN_REFERENCE],
@@ -302,12 +355,14 @@ def build_public_data(
     delivery_rows: list[dict[str, object]],
     order_values: dict[str, float] | None = None,
     creator_assets: list[dict[str, object]] | None = None,
+    featured_videos_by_month: list[dict[str, object]] | None = None,
     generated_at: datetime | None = None,
 ) -> dict[str, object]:
     if not survey_rows:
         raise ValueError("Survey CSV has no responses")
     order_values = order_values or {}
     creator_assets = creator_assets or []
+    featured_videos_by_month = featured_videos_by_month or []
     first_date = min(row["date"] for row in survey_rows)
     last_date = max(row["date"] for row in survey_rows)
 
@@ -432,6 +487,7 @@ def build_public_data(
         },
         "weeks": weeks,
         "june_creators": creator_assets,
+        "featured_videos_by_month": featured_videos_by_month,
         "definitions": {
             "revenue": "Shopify net payments received minus refunds for matched survey orders.",
             "survey_roas": "Matched YouTube survey-order revenue divided by Google Ads spend delivered on YouTube inventory.",
@@ -455,6 +511,9 @@ def main() -> None:
     end = max(row["date"] for row in survey_rows)
     delivery_rows = fetch_youtube_delivery(service, args.customer_id, start, end)
     creator_assets = fetch_june_creator_assets(service, args.customer_id)
+    featured_videos_by_month = fetch_featured_videos_by_month(
+        service, args.customer_id, start, end
+    )
     shopify_values = fetch_shopify_order_values(
         (row["order_id"] for row in survey_rows), shopify_token
     )
@@ -463,6 +522,7 @@ def main() -> None:
         delivery_rows,
         shopify_values,
         creator_assets,
+        featured_videos_by_month,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temporary_output = args.output.with_suffix(f"{args.output.suffix}.tmp")

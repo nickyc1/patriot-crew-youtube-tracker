@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T19:17:33.213588+00:00",
+  "generated_at": "2026-07-22T19:48:20.913983+00:00",
   "data_through": "2026-07-22",
   "reporting_window": {
     "start": "2026-06-08",
@@ -304,6 +304,60 @@
       ],
       "video_count": 1,
       "google_reported_roas": 1.43
+    }
+  ],
+  "featured_videos_by_month": [
+    {
+      "month": "2026-06",
+      "label": "June 2026",
+      "videos": [
+        {
+          "youtube_id": "t3WaMcDL5gU",
+          "title": "Ships in 24hrs 24hr",
+          "spend": 406.74
+        },
+        {
+          "youtube_id": "2Da1sBq61MA",
+          "title": "Plain Tees The Best Wardrobe Decision",
+          "spend": 393.99
+        },
+        {
+          "youtube_id": "CmSbXfkX_Mg",
+          "title": "Square - Crop/Trim of June 11, 2026",
+          "spend": 354.77
+        },
+        {
+          "youtube_id": "mgRoIyHUeR8",
+          "title": "Patriot Crew Tees Veteran Mental Health Support",
+          "spend": 329.7
+        }
+      ]
+    },
+    {
+      "month": "2026-07",
+      "label": "July 2026",
+      "videos": [
+        {
+          "youtube_id": "CmSbXfkX_Mg",
+          "title": "Square - Crop/Trim of June 11, 2026",
+          "spend": 346.3
+        },
+        {
+          "youtube_id": "7vOzMSkxhXA",
+          "title": "Crop/Trim of Crop/Trim of June 11, 2026",
+          "spend": 227.55
+        },
+        {
+          "youtube_id": "9m3OLunM54k",
+          "title": "PatriotCrew1",
+          "spend": 187.57
+        },
+        {
+          "youtube_id": "Y1ms5mHy2zM",
+          "title": "PatriotCrew2",
+          "spend": 173.26
+        }
+      ]
     }
   ],
   "definitions": {

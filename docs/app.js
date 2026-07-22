@@ -212,6 +212,23 @@ function videoPlayer(video) {
   return card;
 }
 
+function renderFeaturedVideos(months) {
+  const container = document.getElementById("featured-video-months");
+  container.replaceChildren();
+  for (const month of months) {
+    const section = element("section", "video-month");
+    const heading = element("div", "month-heading");
+    heading.append(
+      element("h3", "", month.label),
+      element("span", "", `${month.videos.length} videos`),
+    );
+    const gallery = element("div", "video-grid featured-grid");
+    month.videos.forEach((video) => gallery.append(videoPlayer(video)));
+    section.append(heading, gallery);
+    container.append(section);
+  }
+}
+
 function renderCreators(creators) {
   const list = document.getElementById("creator-list");
   list.replaceChildren();
@@ -239,6 +256,7 @@ async function loadDashboard() {
     const data = await response.json();
     renderSummary(data);
     renderChart(data.weeks);
+    renderFeaturedVideos(data.featured_videos_by_month);
     renderCreators(data.june_creators);
   } catch (error) {
     console.error("Dashboard data failed to load", error);
