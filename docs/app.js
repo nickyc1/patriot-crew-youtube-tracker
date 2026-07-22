@@ -58,7 +58,6 @@ function renderSummary(data) {
     "cost-per-acquisition",
     currency.format(summary.cost_per_youtube_response),
   );
-  setText("correlation", `+${summary.same_week_correlation.toFixed(2)}`);
   setText(
     "match-rate",
     `${summary.matched_youtube_orders}/${summary.youtube_responses} survey orders matched to Shopify`,
