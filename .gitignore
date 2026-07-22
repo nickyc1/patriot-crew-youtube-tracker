@@ -1,0 +1,7 @@
+*.csv
+.env
+.env.*
+google-ads.yaml
+__pycache__/
+*.pyc
+.DS_Store

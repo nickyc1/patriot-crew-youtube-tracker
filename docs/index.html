@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Weekly Patriot Crew YouTube acquisition signal from post-purchase surveys and Google Ads spend.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>Patriot Crew | YouTube Acquisition Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="https://patriotcrew.co/" aria-label="Patriot Crew home">
+        <img src="assets/patriot-crew-logo.png" alt="Patriot Crew">
+      </a>
+      <div class="masthead-meta">
+        <span>YouTube acquisition tracker</span>
+        <span id="data-through">Loading data</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Weekly growth signal</p>
+        <h1 id="page-title">Are more customers hearing about Patriot Crew on YouTube?</h1>
+        <p class="lede">We pair the cleanest customer-reported first-touch signal with actual YouTube inventory spend. This gives us a better read on acquisition than asking last-click ROAS to explain the whole journey.</p>
+      </section>
+
+      <section class="scoreline" aria-label="Current YouTube acquisition summary">
+        <div>
+          <span class="metric-label">YouTube survey acquisitions</span>
+          <strong id="total-youtube">—</strong>
+          <span id="survey-window">Since tracking began</span>
+        </div>
+        <div>
+          <span class="metric-label">June baseline</span>
+          <strong id="june-acquisitions">—</strong>
+          <span id="june-spend">—</span>
+        </div>
+        <div>
+          <span class="metric-label">July month to date</span>
+          <strong id="july-acquisitions">—</strong>
+          <span id="july-spend">—</span>
+        </div>
+      </section>
+
+      <section class="signal" aria-labelledby="signal-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The signal</p>
+            <h2 id="signal-title">YouTube spend vs. survey acquisitions</h2>
+          </div>
+          <div class="legend" aria-label="Chart legend">
+            <span><i class="legend-spend"></i>YouTube spend</span>
+            <span><i class="legend-survey"></i>Survey acquisitions</span>
+          </div>
+        </div>
+        <div class="chart-shell">
+          <svg id="weekly-chart" role="img" aria-labelledby="chart-title chart-description" viewBox="0 0 1080 480">
+            <title id="chart-title">Weekly YouTube spend and survey acquisitions</title>
+            <desc id="chart-description">Bars show Google Ads spend delivered on YouTube inventory. The line shows orders selecting YouTube as where they first heard about Patriot Crew.</desc>
+          </svg>
+        </div>
+        <p class="partial-note">Dashed weeks are partial reporting periods.</p>
+      </section>
+
+      <section class="readout" aria-labelledby="readout-title">
+        <p class="eyebrow">Current read</p>
+        <h2 id="readout-title">Directional signal, still early.</h2>
+        <p id="readout-copy">Loading the latest complete-week comparison.</p>
+        <p class="confidence" id="confidence-copy">We will judge the relationship over more complete weeks, not one platform-reported ROAS number.</p>
+      </section>
+
+      <section class="month-table" aria-labelledby="month-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Monthly view</p>
+            <h2 id="month-title">June baseline and July progress</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Period</th>
+                <th scope="col">YT spend</th>
+                <th scope="col">Survey responses</th>
+                <th scope="col">YT acquisitions</th>
+                <th scope="col">YT share</th>
+                <th scope="col">Spend / YT acquisition</th>
+              </tr>
+            </thead>
+            <tbody id="month-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="week-table" aria-labelledby="week-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Weekly detail</p>
+            <h2 id="week-title">The operating view</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Week</th>
+                <th scope="col">YT spend</th>
+                <th scope="col">Survey responses</th>
+                <th scope="col">YT acquisitions</th>
+                <th scope="col">YT share</th>
+                <th scope="col">Spend / YT acquisition</th>
+              </tr>
+            </thead>
+            <tbody id="week-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="next-test" aria-labelledby="test-title">
+        <div>
+          <p class="eyebrow">Live July test</p>
+          <h2 id="test-title">Chad Prather creator proof</h2>
+        </div>
+        <div class="test-details">
+          <p>Two creator videos. Men 55+. Desktop-focused. $100/day. The job is to grow the YouTube first-touch signal with a concentrated test before we add more creators or audiences.</p>
+          <p class="test-status"><span></span>Launched July 19</p>
+        </div>
+      </section>
+
+      <section class="method" aria-labelledby="method-title">
+        <p class="eyebrow">How to read this</p>
+        <h2 id="method-title">One customer signal, one media input.</h2>
+        <div class="method-grid">
+          <p><strong>Acquisition signal:</strong> orders selecting YouTube for “Where did you first hear about Patriot Crew?”</p>
+          <p><strong>Media input:</strong> Google Ads cost actually delivered on YouTube inventory across Demand Gen, PMax, and other campaign types.</p>
+          <p><strong>Guardrail:</strong> this is directional evidence. Correlation is useful for scaling decisions, but it does not prove that every survey order was caused by an ad.</p>
+        </div>
+      </section>
+
+      <div id="error-state" class="error-state" hidden>
+        The tracker data could not be loaded. Please refresh or check the latest deployment.
+      </div>
+    </main>
+
+    <footer>
+      <span>Patriot Crew × RAX Digital</span>
+      <span>Customer-level survey data is never published.</span>
+    </footer>
+  </body>
+</html>
