@@ -220,7 +220,7 @@ function renderFeaturedVideos(months) {
     const heading = element("div", "month-heading");
     heading.append(
       element("h3", "", month.label),
-      element("span", "", `${month.videos.length} videos`),
+      element("span", "", `Top ${month.videos.length} by spend`),
     );
     const gallery = element("div", "video-grid featured-grid");
     month.videos.forEach((video) => gallery.append(videoPlayer(video)));
